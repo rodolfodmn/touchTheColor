@@ -1,7 +1,7 @@
-//import Init from './init.js'
 import utils from './utils.js'
+import events from './events.js'
 
-window.onload = function (){
-    utils.test()
+window.onload = function () {
+    events.init()
 }
 
