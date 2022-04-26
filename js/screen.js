@@ -35,12 +35,11 @@ var screen = (function () {
     function init() {
         document.querySelector("#ini").style.display = "none";
         canvas.style.display = "block"
-        var ctx = canvas.getContext('2d')
-        ctx.beginPath();
-        ctx.lineWidth = "6";
-        ctx.strokeStyle = "red";
-        ctx.rect(0, 0, configs.screenH, configs.screenW);
-        ctx.stroke();
+        canvas.width = document.body.clientWidth;
+        canvas.height = document.body.clientHeight;
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         if (lifes >= 4) {
             update();
 
