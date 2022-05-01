@@ -8,5 +8,12 @@
 }
 #cor{
 	border:1px solid #000;
+	width:150px;
+	height:150px;
 }
-
+#ini {
+	margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

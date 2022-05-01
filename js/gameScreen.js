@@ -1,4 +1,5 @@
 import configs from './configs.js'
+import player from './player.js'
 
 var gameScreen = (function () {
 
@@ -9,10 +10,10 @@ var gameScreen = (function () {
         ctx.clearRect(0, 0, configs.screenW, configs.screenH);
         ctx.fillStyle = "#000";
         ctx.font = "35px Arial";
-        ctx.fillText("lifes: " + (lifes), 12, 32);
+        ctx.fillText("Vidas: " + (player.lifes), 12, 32);
         ctx.fillStyle = "#f00";
         ctx.font = "35px Arial";
-        ctx.fillText("lifes: " + (lifes), 10, 30);
+        ctx.fillText("Vidas: " + (player.lifes), 10, 30);
     }
 
     function colorCollide() {
@@ -24,7 +25,7 @@ var gameScreen = (function () {
     }
 
     function takeLife() {
-        lifes--
+        player.lifes--
     }
 
     function endGame() {
@@ -39,7 +40,7 @@ var gameScreen = (function () {
         var ctx = canvas.getContext("2d");
         ctx.fillStyle = "#FF0000";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        if (lifes >= 4) {
+        if (player.lifes >= 4) {
             update();
 
         } else {
@@ -57,4 +58,4 @@ var gameScreen = (function () {
 
 })()
 
-export default screen
+export default gameScreen
