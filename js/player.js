@@ -1,6 +1,6 @@
 var player = (function () {
 
-    var lifes
+    var lifes = 5
     var score
 
     return {

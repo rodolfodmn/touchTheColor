@@ -1,15 +1,20 @@
-var utils = (function(){
-    function gId(x){
+var utils = (function () {
+    function gId(x) {
         return document.getElementById(x);
     }
 
-    function test(){
+    function getMainColor() {
+        return document.querySelector('#cor').style.background
+    }
+
+    function test() {
         alert('teste!')
     }
 
     return {
         gId,
         test,
+        getMainColor,
     }
 })()
 

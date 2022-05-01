@@ -1,22 +1,30 @@
-var Square = function(color,posX,posY){
+import utils from './utils.js'
 
-    this.w = W/3,
-        this.h = H/6,
-        this.move = 0,
-        this.ponto = false;
-    self = this;
+var square = (function () {
+    var x = 0
+    var y = 0
+    var squareCtx
 
-    self.color = color;
-    self.posX = posX;
-    self.posY = posY;
-
-    this.draw = function(){
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.posX,this.posY, this.w, this.h);
+    function init(ctx) {
+        squareCtx = ctx
+        drawn()
     }
 
-    this.move = function(){
-        this.posY += 9;
+    function drawn() {
+        squareCtx.fillStyle = utils.getMainColor()
+        squareCtx.fillRect(x, y, 100, 100);
     }
 
-};
+    function move() {
+        x++
+        console.log(x)
+        drawn()
+    }
+
+    return {
+        init,
+        move,
+    }
+
+})()
+export default square

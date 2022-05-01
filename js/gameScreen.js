@@ -1,5 +1,6 @@
 import configs from './configs.js'
 import player from './player.js'
+import square from './square.js'
 
 var gameScreen = (function () {
 
@@ -38,17 +39,16 @@ var gameScreen = (function () {
         canvas.width = document.body.clientWidth;
         canvas.height = document.body.clientHeight;
         var ctx = canvas.getContext("2d");
-        ctx.fillStyle = "#FF0000";
+        ctx.fillStyle = "#fff"
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        if (player.lifes >= 4) {
-            update();
+        square.init(ctx)
+        setInterval(update, '50')
 
-        } else {
-            gameOver = true
-        }
     }
 
     function update() {
+        console.log('update')
+        square.move()
     }
 
     return {
