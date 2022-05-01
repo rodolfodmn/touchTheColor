@@ -1,3 +1,5 @@
+import configs from "./configs.js";
+
 var utils = (function () {
     function gId(x) {
         return document.getElementById(x);
@@ -5,6 +7,14 @@ var utils = (function () {
 
     function getMainColor() {
         return document.querySelector('#cor').style.background
+    }
+
+    function chooseColor() {
+        return configs.colors[
+            Math.floor(
+                Math.random() * configs.colors.length - 1
+            )
+        ]
     }
 
     function test() {
@@ -15,6 +25,7 @@ var utils = (function () {
         gId,
         test,
         getMainColor,
+        chooseColor,
     }
 })()
 

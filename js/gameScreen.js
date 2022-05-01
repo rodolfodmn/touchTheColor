@@ -6,6 +6,7 @@ var gameScreen = (function () {
 
     var gameOver = false
     var canvas = document.querySelector('#canvas')
+    var ctx
 
     function painel() {
         ctx.clearRect(0, 0, configs.screenW, configs.screenH);
@@ -38,7 +39,7 @@ var gameScreen = (function () {
         canvas.style.display = "block"
         canvas.width = document.body.clientWidth;
         canvas.height = document.body.clientHeight;
-        var ctx = canvas.getContext("2d");
+        ctx = canvas.getContext("2d");
         ctx.fillStyle = "#fff"
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         square.init(ctx)
@@ -47,6 +48,8 @@ var gameScreen = (function () {
     }
 
     function update() {
+        ctx.fillStyle = "#fff"
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         console.log('update')
         square.move()
     }

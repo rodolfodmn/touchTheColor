@@ -1,16 +1,9 @@
 import configs from './configs.js'
+import utils from './utils.js'
 
 var startScreen = (function () {
     function init() {
-        document.querySelector('#cor').style.background = chooseColor()
-    }
-
-    function chooseColor() {
-        return configs.colors[
-            Math.floor(
-                Math.random() * configs.colors.length - 1
-            )
-        ]
+        document.querySelector('#cor').style.background = utils.chooseColor()
     }
 
     return {
