@@ -1,8 +1,7 @@
 import configs from './configs.js'
 
-var screen = (function () {
+var gameScreen = (function () {
 
-    var lifes
     var gameOver = false
     var canvas = document.querySelector('#canvas')
 

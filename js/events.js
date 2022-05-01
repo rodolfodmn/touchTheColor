@@ -1,4 +1,4 @@
-import screen from './screen.js'
+import gameScreen from './gameScreen.js'
 
 var events = (function () {
     //function coloClick(e) {
@@ -42,7 +42,7 @@ var events = (function () {
     }
 
     function playGame() {
-        screen.init()
+        gameScreen.init()
     }
 
     return {
